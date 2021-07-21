@@ -1,13 +1,13 @@
 <!--- NOTE: This is a template for your project README. Edit the content according to the comments provided.--->
 
 # <application_license_badge>
-<!--- [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](./LICENSE) --->
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](./LICENSE)
 
 # <application_name>
-<!--- Description of the application. ---> 
+Example Smart Health Card issuer for verifiable vaccination records
 
 ## Technical Details
-<!--- Technology Stack Used. ---> 
+.NET 5
 
 ## Third-Party Products/Libraries used and the licenses they are covered by
 <!--- product/library and path to the LICENSE --->
