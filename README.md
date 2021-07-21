@@ -1,9 +1,8 @@
 <!--- NOTE: This is a template for your project README. Edit the content according to the comments provided.--->
 
-# <application_license_badge>
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](./LICENSE)
 
-# <application_name>
+# Smart Health Card Issuer Proof of Concept
 Example Smart Health Card issuer for verifiable vaccination records
 
 ## Technical Details
