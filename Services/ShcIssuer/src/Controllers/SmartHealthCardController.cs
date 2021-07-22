@@ -50,9 +50,17 @@ namespace ShcIssuer.Controllers
         }
 
         [HttpPost]
-        [Route("/Patient/{id}/$health-cards-issue")]
+        [Route("/Patient/{patientId}/$ca-covid-smart-health-card")]
         [Produces("application/smart-health-card")]
-        public async Task<ActionResult<SmartHealthCardModel>> CreateSmartHealthCard([FromBody] HealthCardIssueRequest request, string id)
+        public async Task<ActionResult<SmartHealthCardModel>> CreateSmartHealthCard(string patientId)
+        {
+            return new SmartHealthCardModel();
+        }
+
+        [HttpPost]
+        [Route("/Patient/{patientId}/$health-cards-issue")]
+        [Produces("application/smart-health-card")]
+        public async Task<ActionResult<SmartHealthCardModel>> CreateSmartHealthCard([FromBody] HealthCardIssueRequest request, string patientId)
         {
             return new SmartHealthCardModel();
         }

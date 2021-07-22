@@ -9,7 +9,7 @@ namespace ShcIssuer.Immunization.Models
     public class ImmunizationEvent
     {
         /// <summary>
-        /// Gets or sets the Immunization id.
+        /// Gets or sets the Immunization event Id.
         /// </summary>
         [JsonPropertyName("id")]
         public string Id { get; set; } = string.Empty;
@@ -39,10 +39,16 @@ namespace ShcIssuer.Immunization.Models
         public string TargetedDisease { get; set; } = string.Empty;
 
         /// <summary>
-        /// Gets or sets the Immunization definition.
+        /// Gets or sets the Vaccine Product administered.
         /// </summary>
-        [JsonPropertyName("immunization")]
-        public ImmunizationDefinition Immunization { get; set; } = new ImmunizationDefinition();
+        [JsonPropertyName("vaccine")]
+        public VaccineProduct VaccineProduct { get; set; } = new VaccineProduct();
+
+       /// <summary>
+        /// Gets or sets the Immunization definition.
+        /// </summary> 
+        [JsonPropertyName("lotNumber")]
+        public String LotNumber { get; set; } = string.Empty;
 
     }
 }

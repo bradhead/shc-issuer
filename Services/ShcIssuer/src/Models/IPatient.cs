@@ -6,6 +6,6 @@ namespace ShcIssuer.Models
     {
         public string FamilyName { get; set; }
         public IList<string> GivenNames { get; set; }
-        public DateTime BirthDate { get; set; }
+        public DateTime Birthdate { get; set; }
     }
 }
