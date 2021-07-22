@@ -22,7 +22,7 @@ namespace ShcIssuer.Services
             this.immunizationDelegate = immunizationDelegate;
 
         }
-        public Task<RequestResult<SmartHealthCardModel>> CreateSmartHealthCardForCovid19(string patientId)
+        public Task<RequestResult<SmartHealthCardModel>> CreateCovidSmartHealthCard(string patientId)
         {
 
         }

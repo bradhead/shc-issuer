@@ -5,6 +5,6 @@ namespace ShcIssuer.Services
     using Hl7.Fhir.Model;
     public interface ISmartHealthCardService
     {
-        public Task<RequestResult<SmartHealthCardModel>> CreateSmartHealthCardForCovid19(string patientId);
+        public Task<RequestResult<SmartHealthCardModel>> CreateCovidSmartHealthCard(string patientId);
     }
 }

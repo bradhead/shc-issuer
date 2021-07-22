@@ -28,7 +28,7 @@ namespace ShcIssuer.Controllers
         }
 
         [HttpPost]
-        [Route("/Patient/{id}/$smart-health-card-bundle")]
+        [Route("/Patient/{id}/$health-card-issue-bundle")]
         public IActionResult CreateSmartHealthCardBundle([FromBody] HealthCardIssueRequest request, string id)
         {
 
@@ -50,11 +50,13 @@ namespace ShcIssuer.Controllers
         }
 
         [HttpPost]
-        [Route("/Patient/{patientId}/$ca-covid-smart-health-card")]
+        [Route("/Patient/{patientId}/CovidSmartHealthCard.smart-health-card")]
         [Produces("application/smart-health-card")]
-        public async Task<ActionResult<SmartHealthCardModel>> CreateSmartHealthCard(string patientId)
+        public async Task<ActionResult<SmartHealthCardModel>> CreateCovidSmartHealthCard(string patientId)
         {
-            return new SmartHealthCardModel();
+            RequestResult<SmartHealthCardModel> result = await this.service.CreateCovidSmartHealthCard(patientId).ConfigureAwait(true);
+
+            return result.Payload;
         }
 
         [HttpPost]
