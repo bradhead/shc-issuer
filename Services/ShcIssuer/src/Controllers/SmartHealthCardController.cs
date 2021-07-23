@@ -66,5 +66,13 @@ namespace ShcIssuer.Controllers
         {
             return new SmartHealthCardModel();
         }
+
+        [HttpGet]
+        [Route("/.well-known/smart-configuration")]
+        [ProducesDefaultResponseType("application/json")]
+        public IActionResult Configuration
+        {
+            return this.service.GetFhirSmartConfiguration();
+        }
     }
 }
