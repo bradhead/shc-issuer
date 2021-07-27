@@ -12,3 +12,4 @@ namespace ShcIssuer.Models
         [JsonPropertyName("parameter")]
         public List<RequestParameter> parameters { get; set; }
     }
+}

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Net.Mime;
+using System.Net.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
@@ -64,15 +65,17 @@ namespace ShcIssuer.Controllers
         [Produces("application/smart-health-card")]
         public async Task<ActionResult<SmartHealthCardModel>> CreateSmartHealthCard([FromBody] HealthCardIssueRequest request, string patientId)
         {
-            return new SmartHealthCardModel();
+            RequestResult<SmartHealthCardModel> result = await this.service.CreateCovidSmartHealthCard(patientId).ConfigureAwait(true);
+            return result.Payload;
         }
 
         [HttpGet]
         [Route("/.well-known/smart-configuration")]
-        [ProducesDefaultResponseType("application/json")]
-        public IActionResult Configuration
+        [Produces("application/json")]
+        public async Task<ActionResult<FhirSmartConfiguration>> Configuration()
         {
-            return this.service.GetFhirSmartConfiguration();
+            return await this.service.GetConfiguration();
         }
     }
 }
+

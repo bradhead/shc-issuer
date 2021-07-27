@@ -6,5 +6,7 @@ namespace ShcIssuer.Services
     public interface ISmartHealthCardService
     {
         public Task<RequestResult<SmartHealthCardModel>> CreateCovidSmartHealthCard(string patientId);
+
+        public Task<FhirSmartConfiguration> GetConfiguration();
     }
 }

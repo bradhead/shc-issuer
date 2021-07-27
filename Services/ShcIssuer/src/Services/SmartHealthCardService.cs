@@ -14,7 +14,7 @@ namespace ShcIssuer.Services
         private readonly IImmunizationDelegate immunizationDelegate;
 
         public SmartHealthCardService(ILogger<SmartHealthCardService> logger,
-            IPatientDelegate patientDelegate, 
+            IPatientDelegate patientDelegate,
             IImmunizationDelegate immunizationDelegate)
         {
             this.logger = logger;
@@ -26,5 +26,11 @@ namespace ShcIssuer.Services
         {
 
         }
+
+        public Task<FhirSmartConfiguration> GetConfiguration()
+        {
+            return new FhirSmartConfiguration();
+        }
+
     }
 }
